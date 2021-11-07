@@ -9,7 +9,7 @@ let particleArray = [];
 let mouse = {
     x: null,
     y: null,
-    radius: 250
+    radius: 100
 }
 
 window.addEventListener('mousemove', (event) => {
@@ -19,9 +19,9 @@ window.addEventListener('mousemove', (event) => {
 });
 
 ctx.fillStyle = 'white';
-ctx.font = '30px Verdana';
-ctx.fillText('A', 0, 30);
-const data = ctx.getImageData(0, 0, 100, 100);
+ctx.font = '10px Verdana';
+ctx.fillText('ADEL ALKHESH', 50, 45);
+const textCoordinates = ctx.getImageData(0, 0, 150, 100);
 
 
 class Particle{
@@ -35,7 +35,7 @@ class Particle{
     }
 
     draw() {
-        ctx.fillStyle = 'red';
+        ctx.fillStyle = 'WHITE';
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.closePath();
@@ -71,10 +71,15 @@ class Particle{
 
 function init() {
     particleArray = [];
-    for (let i = 0; i < 1000; i++){
-        let x = Math.random() * canvas.width;
-        let y = Math.random() * canvas.height;
-        particleArray.push(new Particle(x, y))
+    for (let y = 0, y2 = textCoordinates.height; y < y2; y++){
+        for (let x = 0, x2 = textCoordinates.width; x < x2; x++){
+            if (textCoordinates.data[(y * 4 * textCoordinates.width) + (x * 4) + 3] > 128) {
+                let positionX = x;
+                let positionY = y;
+                particleArray.push(new Particle(positionX * 10, positionY * 10));
+
+            }
+        }
     }
    
     
