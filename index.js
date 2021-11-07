@@ -18,8 +18,8 @@ window.addEventListener("mousemove", (event) => {
   mouse.x = event.x;
   mouse.y = event.y;
 });
- let color1 = Math.random() * 360;
- 
+let color1 = Math.random() * 360;
+
 ctx.fillStyle = `hsl(${color1}, 50%, 50%`;
 ctx.font = "25px Montserrat";
 let textString = "IRONHACK";
