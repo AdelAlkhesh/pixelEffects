@@ -21,7 +21,7 @@ window.addEventListener("mousemove", (event) => {
 
 ctx.fillStyle = "white";
 ctx.font = "25px Montserrat";
-let textString = 'Adel Alkhesh'
+let textString = "Adel Alkhesh";
 let textWidth = ctx.measureText(textString).width;
 ctx.fillText(textString, 5, 30);
 const textCoordinates = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -37,7 +37,8 @@ class Particle {
   }
 
   draw() {
-    ctx.fillStyle = "WHITE";
+    let color1 = Math.random() * 360;
+    ctx.fillStyle = `hsl(${color1}, 50%, 50%`;
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.closePath();
