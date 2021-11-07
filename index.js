@@ -19,7 +19,7 @@ window.addEventListener('mousemove', (event) => {
 });
 
 ctx.fillStyle = 'white';
-ctx.font = '10px Verdana';
+ctx.font = '10px Montserrat';
 ctx.fillText('ADEL ALKHESH', 50, 45);
 const textCoordinates = ctx.getImageData(0, 0, 150, 100);
 
