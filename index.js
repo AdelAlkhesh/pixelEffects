@@ -20,11 +20,13 @@ window.addEventListener("mousemove", (event) => {
 });
 let color1 = Math.random() * 360;
 
-ctx.fillStyle = `hsl(${color1}, 50%, 50%`;
-ctx.font = "25px Montserrat";
-let textString = "IRONHACK";
-let textWidth = ctx.measureText(textString).width;
-ctx.fillText(textString, 5, 30);
+ctx.fillStyle = 'blue';
+ctx.font = "35px Montserrat";
+ctx.fillText('IRON', 5, 30);
+ctx.fillStyle = 'blue';
+ctx.font = "35px Montserrat";
+ctx.fillText("HACK", 5, 60);
+
 const textCoordinates = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
 class Particle {
@@ -39,7 +41,7 @@ class Particle {
 
   draw() {
     let color1 = Math.random() * 360;
-    ctx.fillStyle = `hsl(${color1}, 50%, 50%`;
+    ctx.fillStyle ='white';
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.closePath();
