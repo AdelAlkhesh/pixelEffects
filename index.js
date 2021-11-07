@@ -18,10 +18,11 @@ window.addEventListener("mousemove", (event) => {
   mouse.x = event.x;
   mouse.y = event.y;
 });
-
-ctx.fillStyle = "white";
+ let color1 = Math.random() * 360;
+ 
+ctx.fillStyle = `hsl(${color1}, 50%, 50%`;
 ctx.font = "25px Montserrat";
-let textString = "Adel Alkhesh";
+let textString = "IRONHACK";
 let textWidth = ctx.measureText(textString).width;
 ctx.fillText(textString, 5, 30);
 const textCoordinates = ctx.getImageData(0, 0, canvas.width, canvas.height);
